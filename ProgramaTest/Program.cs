@@ -7,6 +7,7 @@ namespace ProgramaTest
 {
     class Program
     {
+        #region Atributes
         //relacion de consola 8 alto 15 de largo (cuadrado perfecto);
 
         public static ConsoleColor console_color = ConsoleColor.Red;
@@ -30,11 +31,13 @@ namespace ProgramaTest
                 }
             );
 
-
+        #endregion
+        
         static void Main(string[] args)
         {
             Console.ForegroundColor = console_color;
 
+            //main Loop
             while (true)
             {
                 Console.Clear();
@@ -45,9 +48,13 @@ namespace ProgramaTest
                 CreateBoxes(15);
                 BuildBoxes();
 
+                //Worst algorithm ever//
                 //CreatePaths();
-                
+
+                //Better algorithm//
                 Path();
+
+                //Rebuild Boxes
                 BuildBoxes();
 
                 Draw();
@@ -59,6 +66,8 @@ namespace ProgramaTest
                 Console.ReadLine();
             }
         }
+        
+        #region Methods
 
         static void Path()
         {
@@ -122,7 +131,7 @@ namespace ProgramaTest
 
             //PrintPixel(randX,randY,corners);
 
-            #region El que mejor anda
+            #region Works pretty well
 
             int X = 0;
             int Y = 0;
@@ -168,6 +177,7 @@ namespace ProgramaTest
             //Debug.WriteLine(grid.content[randX + X, randY + Y]);
             
             #endregion
+            
             return false;
         }
 
@@ -419,5 +429,7 @@ namespace ProgramaTest
         {
             rooms.Sort((a, b) => a == null ? 1 : b == null ? -1 : a.position.x.CompareTo(b.position.x));
         }
+
+#endregion
     }
 }

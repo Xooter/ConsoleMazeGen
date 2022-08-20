@@ -4,6 +4,10 @@ using System.Text;
 
 namespace ProgramaTest.Models
 {
+
+    /// <summary>
+    /// First touch of the proyect, works terribly
+    /// </summary>
     class OldVersion
     {/*
 
